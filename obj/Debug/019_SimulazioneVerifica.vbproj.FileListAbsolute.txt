@@ -10,3 +10,16 @@ E:\Informatica\Programmi Windows Form\019_SimulazioneVerifica\obj\Debug\019_Simu
 E:\Informatica\Programmi Windows Form\019_SimulazioneVerifica\obj\Debug\019_SimulazioneVerifica.exe
 E:\Informatica\Programmi Windows Form\019_SimulazioneVerifica\obj\Debug\019_SimulazioneVerifica.xml
 E:\Informatica\Programmi Windows Form\019_SimulazioneVerifica\obj\Debug\019_SimulazioneVerifica.pdb
+D:\Informatica\simulazione-verifica\bin\Debug\019_SimulazioneVerifica.exe.config
+D:\Informatica\simulazione-verifica\bin\Debug\019_SimulazioneVerifica.exe
+D:\Informatica\simulazione-verifica\bin\Debug\019_SimulazioneVerifica.pdb
+D:\Informatica\simulazione-verifica\bin\Debug\019_SimulazioneVerifica.xml
+D:\Informatica\simulazione-verifica\obj\Debug\019_SimulazioneVerifica.vbprojAssemblyReference.cache
+D:\Informatica\simulazione-verifica\obj\Debug\_019_SimulazioneVerifica.frm_Main.resources
+D:\Informatica\simulazione-verifica\obj\Debug\_019_SimulazioneVerifica.Resources.resources
+D:\Informatica\simulazione-verifica\obj\Debug\019_SimulazioneVerifica.vbproj.GenerateResource.cache
+D:\Informatica\simulazione-verifica\obj\Debug\019_SimulazioneVerifica.vbproj.CoreCompileInputs.cache
+D:\Informatica\simulazione-verifica\obj\Debug\019_SimulazioneVerifica.exe
+D:\Informatica\simulazione-verifica\obj\Debug\019_SimulazioneVerifica.xml
+D:\Informatica\simulazione-verifica\obj\Debug\019_SimulazioneVerifica.pdb
+D:\Informatica\simulazione-verifica\obj\Debug\_019_SimulazioneVerifica.frm_Carica.resources
