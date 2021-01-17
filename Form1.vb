@@ -206,6 +206,19 @@
     End Sub
 
     Private Sub btn_Totale_Click(sender As Object, e As EventArgs) Handles btn_Totale.Click
+        Dim k_err As Short = 0
+
+        For i = 0 To dgv_Discoteche.Rows.Count - 1
+            If dgv_Discoteche.Rows(i).Cells(0).Value = Nothing Then
+                k_err += 1
+            End If
+        Next
+
+        If k_err = n_Discoteche Then
+            MsgBox("Non hai caricato alcuna discoteca!")
+            Exit Sub
+        End If
+
         Dim totale As Integer = 0
         For i = 0 To dgv_Calendario.Rows.Count - 1
             For j = 0 To dgv_Calendario.Columns.Count - 1
@@ -218,6 +231,19 @@
     End Sub
 
     Private Sub btn_Pari_Click(sender As Object, e As EventArgs) Handles btn_Pari.Click
+        Dim k_err As Short = 0
+
+        For i = 0 To dgv_Discoteche.Rows.Count - 1
+            If dgv_Discoteche.Rows(i).Cells(0).Value = Nothing Then
+                k_err += 1
+            End If
+        Next
+
+        If k_err = n_Discoteche Then
+            MsgBox("Non hai caricato alcuna discoteca!")
+            Exit Sub
+        End If
+
         For i = 0 To dgv_Calendario.Rows.Count - 1
             For j = 0 To dgv_Calendario.Columns.Count - 1
                 If dgv_Calendario.Rows(i).Cells(j).Value Mod 2 = 0 Then
