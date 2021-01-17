@@ -135,6 +135,8 @@
             Next
         Next
 
+        MsgBox("La discoteca con più accessi è stata " & max_Disco & " con " & max & " accessi totali.")
+
     End Sub
 
     Sub Generazione_Numeri(ByVal RowInd As Integer)
@@ -149,7 +151,80 @@
     Private Sub dgv_Discoteche_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Discoteche.CellValueChanged
         If CaricamentoCompletato Then
             Call Generazione_Numeri(dgv_Discoteche.CurrentRow.Index)
+
+
+            Dim max As Integer = Integer.MinValue
+
+            For i = 0 To dgv_Calendario.Columns.Count - 1
+                If dgv_Calendario.Rows(dgv_Discoteche.CurrentRow.Index).Cells(i).Value > max Then
+                    max = dgv_Calendario.Rows(dgv_Discoteche.CurrentRow.Index).Cells(i).Value
+                End If
+            Next
+
+            dgv_Accessi.Rows(dgv_Discoteche.CurrentRow.Index).Cells(0).Value = max
         End If
+    End Sub
+
+    Private Sub btn_MassimoDiscoteche_Click(sender As Object, e As EventArgs) Handles btn_MassimoDiscoteche.Click
+        Dim k_err As Short = 0
+
+        For i = 0 To dgv_Discoteche.Rows.Count - 1
+            If dgv_Discoteche.Rows(i).Cells(0).Value = Nothing Then
+                k_err += 1
+            End If
+        Next
+
+        If k_err = n_Discoteche Then
+            MsgBox("Non hai caricato alcuna discoteca!")
+            Exit Sub
+        End If
+
+        Dim max As Integer = Integer.MinValue
+        Dim max_Disco As String = ""
+
+        For i = 0 To dgv_Calendario.Rows.Count - 1
+            For j = 0 To dgv_Calendario.Columns.Count - 1
+
+                If dgv_Calendario.Rows(i).Cells(j).Value > max Then
+                    max = dgv_Calendario.Rows(i).Cells(j).Value
+                    max_Disco = dgv_Discoteche.Rows(i).Cells(0).Value
+                End If
+            Next
+        Next
+
+        For i = 0 To dgv_Calendario.Rows.Count - 1
+            For j = 0 To dgv_Calendario.Columns.Count - 1
+                If dgv_Calendario.Rows(i).Cells(j).Value = max Then
+                    dgv_Calendario.Rows(i).Cells(j).Style.BackColor = Color.Green
+                    Exit For
+                End If
+            Next
+        Next
+
+        lbl_MaxDiscoteche.Text = max_Disco
+        lbl_MaxDiscoteche.Visible = True
+    End Sub
+
+    Private Sub btn_Totale_Click(sender As Object, e As EventArgs) Handles btn_Totale.Click
+        Dim totale As Integer = 0
+        For i = 0 To dgv_Calendario.Rows.Count - 1
+            For j = 0 To dgv_Calendario.Columns.Count - 1
+                totale += dgv_Calendario.Rows(i).Cells(j).Value
+            Next
+        Next
+
+        lbl_Totale.Text = totale
+        lbl_Totale.Visible = True
+    End Sub
+
+    Private Sub btn_Pari_Click(sender As Object, e As EventArgs) Handles btn_Pari.Click
+        For i = 0 To dgv_Calendario.Rows.Count - 1
+            For j = 0 To dgv_Calendario.Columns.Count - 1
+                If dgv_Calendario.Rows(i).Cells(j).Value Mod 2 = 0 Then
+                    lst_Pari.Items.Add(dgv_Calendario.Rows(i).Cells(j).Value)
+                End If
+            Next
+        Next
     End Sub
 End Class
 
