@@ -22,6 +22,7 @@ Partial Class frm_Main
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
         Me.pnl_Sotto = New System.Windows.Forms.Panel()
         Me.lst_Pari = New System.Windows.Forms.ListBox()
         Me.lbl_Totale = New System.Windows.Forms.Label()
@@ -36,6 +37,7 @@ Partial Class frm_Main
         Me.dgv_Accessi = New System.Windows.Forms.DataGridView()
         Me.pnl_Main = New System.Windows.Forms.Panel()
         Me.dgv_Calendario = New System.Windows.Forms.DataGridView()
+        Me.lbl_Titolo = New System.Windows.Forms.Label()
         Me.pnl_Sotto.SuspendLayout()
         Me.pnl_Sinistra.SuspendLayout()
         CType(Me.dgv_Discoteche, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,6 +50,7 @@ Partial Class frm_Main
         'pnl_Sotto
         '
         Me.pnl_Sotto.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.pnl_Sotto.Controls.Add(Me.lbl_Titolo)
         Me.pnl_Sotto.Controls.Add(Me.lst_Pari)
         Me.pnl_Sotto.Controls.Add(Me.lbl_Totale)
         Me.pnl_Sotto.Controls.Add(Me.lbl_MaxDiscoteche)
@@ -209,6 +212,20 @@ Partial Class frm_Main
         Me.dgv_Calendario.Size = New System.Drawing.Size(655, 474)
         Me.dgv_Calendario.TabIndex = 0
         '
+        'lbl_Titolo
+        '
+        Me.lbl_Titolo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Titolo.Font = New System.Drawing.Font("Franklin Gothic Heavy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Titolo.ForeColor = System.Drawing.SystemColors.Control
+        Me.lbl_Titolo.Image = Global._019_SimulazioneVerifica.My.Resources.Resources.disco_ball
+        Me.lbl_Titolo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lbl_Titolo.Location = New System.Drawing.Point(769, 118)
+        Me.lbl_Titolo.Name = "lbl_Titolo"
+        Me.lbl_Titolo.Size = New System.Drawing.Size(210, 39)
+        Me.lbl_Titolo.TabIndex = 3
+        Me.lbl_Titolo.Text = "GESTIONE DISCOTECHE"
+        Me.lbl_Titolo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'frm_Main
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -218,6 +235,8 @@ Partial Class frm_Main
         Me.Controls.Add(Me.pnl_Sinistra)
         Me.Controls.Add(Me.pnl_Sotto)
         Me.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(852, 395)
         Me.Name = "frm_Main"
         Me.Text = "Simulazione Verifica Fila A"
         Me.pnl_Sotto.ResumeLayout(False)
@@ -246,4 +265,5 @@ Partial Class frm_Main
     Friend WithEvents lbl_Totale As Label
     Friend WithEvents lbl_MaxDiscoteche As Label
     Friend WithEvents btn_Pari As Button
+    Friend WithEvents lbl_Titolo As Label
 End Class

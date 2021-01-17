@@ -22,6 +22,7 @@ Partial Class frm_Carica
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Carica))
         Me.lbl_Titolo = New System.Windows.Forms.Label()
         Me.lbl_Testo = New System.Windows.Forms.Label()
         Me.nmr_Num = New System.Windows.Forms.NumericUpDown()
@@ -111,6 +112,7 @@ Partial Class frm_Carica
         Me.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.SystemColors.Control
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_Carica"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CaricaNumeroDiscoteche"
